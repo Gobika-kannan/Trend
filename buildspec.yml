@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+
+  pre_build:
+    commands:
+      - docker login -u gobikaka -p YOUR_PASSWORD
+
+  build:
+    commands:
+      - docker build -t gobikaka/trend-app:latest .
+
+  post_build:
+    commands:
+      - docker push gobikaka/trend-app:latest
+      - kubectl apply -f deployment.yaml
+      - kubectl apply -f service.yaml
