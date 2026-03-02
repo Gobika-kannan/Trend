@@ -1,7 +1,7 @@
  Trend Application Deployment
 
-## 📌 Project Overview
-This project demonstrates end-to-end DevOps Application deployment using:
+## Project Overview
+This project demonstrates Trend Application deployment using:
 
 - React Application 
 - Docker
@@ -13,24 +13,24 @@ This project demonstrates end-to-end DevOps Application deployment using:
 
 ## ⚙️ Steps followed:
 
-### 1️⃣ Clone Repository
+### Clone Repository
 git clone https://github.com/Gobika-kannan/Trend.git
 
 
-### 2️⃣ Docker Build
+### Docker Build
 docker build -t gobikaka/trend-app .
 
 docker run -d -p 3000:80 trend-app
 
 
 
-### 3️⃣ Push to DockerHub
+### Push to DockerHub
 docker tag trend-app gobikaka/trend-app:latest
 docker push gobikaka/trend-app:latest
 
 
 
-### 4️⃣ Create EKS Cluster
+### Create EKS Cluster
 eksctl create cluster \
 --name trend-cluster \
 --region ap-south-1 \
@@ -38,11 +38,11 @@ eksctl create cluster \
 --node-type t3.medium \
 --nodes 2
 
-### 5️⃣ Kubernetes Deployment
+###  Kubernetes Deployment
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
-## 🔄 Jenkins CI/CD Pipeline
+## Jenkins CI/CD Pipeline
 
 Pipeline stages:
 
@@ -50,7 +50,7 @@ Pipeline stages:
 2. Build Docker Image
 3. Push Image to DockerHub
 4. Deploy Application to AWs
-## 🌐 Application URL
+## Application URL
 
 LoadBalancer DNS:
 http://a5ad9f69f99a34eb1ae76e94ad61e27d-2100824263.ap-south-1.elb.amazonaws.com
