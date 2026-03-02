@@ -4,7 +4,7 @@ phases:
 
   pre_build:
     commands:
-      - docker login -u gobikaka -p YOUR_PASSWORD
+      - docker login -u gobikaka -p Gobi12345gb*
 
   build:
     commands:
